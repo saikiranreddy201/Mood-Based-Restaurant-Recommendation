@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+
+      .jumbotron {
+        background-color: #343a40;
+        color: white;
+        margin-bottom: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .jumbotron h1 {
+        font-size: 32px;
+        margin-top: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .card-deck {
+        margin-bottom: 20px;
+      }
+
+      .card {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h2 {
+        font-size: 18px;
+        margin: 10px 0;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron bg-gray-900 text-white py-4">
+      <h1 class="text-4xl">Mood based Food Recommender</h1>
+    </div>
+    <div class="container mx-auto">
+      <div class="py-8 text-center">
+        <h2 class="text-4xl">Select your mood and get recommendations</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('happy')">
+            <h2 class="text-xl font-semibold text-white mb-4  text-center">Are you feeling joyful?</h2>
+            <img src="https://post.healthline.com/wp-content/uploads/2021/10/happy-boy-with-painted-hands-732x549-thumbnail.jpg" alt="Joyful" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Discover delightful treats to match your joyful mood.</p>
+          </div>
+          
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('laziness')">
+            <h2 class="text-xl font-semibold text-white mb-4 text-center">I am Lazy</h2>
+            <img src="https://2.bp.blogspot.com/-i3S7c3UAp2I/Vh8k6-jM0HI/AAAAAAAAgag/XCaUYuLWtg4/s640/lazy-boy-on-couch.jpg" alt="Lazy" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Find some comfort food to satisfy your laziness.</p>
+          </div>
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('sad')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">I am sad</h2>
+            <img src="https://media.istockphoto.com/id/1394411342/photo/a-boy-with-a-pillow-in-hands-looking-upset.webp?b=1&s=170667a&w=0&k=20&c=NQrQs1y6mbop1c86kUO3CvVq8iEBZubGe9v9uqSnaqs=" alt="Sad" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Discover dishes that can uplift your mood.</p>
+          </div>
+          
+          
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('depression')">
+              <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">I am Depressed</h2>
+              <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_10/1414617/parents-community-depression-main-today-1-190304.jpg" alt="Depressed" class="w-32 mx-auto mb-4">
+              <p class="text-gray-300">Discover dishes that can uplift your mood.</p>
+            </div>
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('hunger')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">I feel like hungry</h2>
+            <img src="https://media.istockphoto.com/id/472493478/photo/happy-little-boy-waiting-for-dinner.jpg?s=612x612&w=0&k=20&c=EvZ6uG0nHlaekp32Km-gL04ytont2qWoTNcV6-eUIQc=" alt="Hungry" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Explore a variety of delicious options to satisfy your hunger.</p>
+          </div>
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('boredom')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">I am Bored!</h2>
+            <img src="https://www.thedad.com/wp-content/uploads/2020/05/bored.jpg" alt="Bored" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Discover exciting dishes to spice up your day.</p>
+          </div>
+
+
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('stress')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">It is so stressful</h2>
+            <img src="https://www.verywellfamily.com/thmb/17uX2i_cIAVOud6KgEzRsgejyco=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-557475959-5baf854a46e0fb00265de4af.jpg" alt="Stressful" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Find soothing dishes to relax and unwind.</p>
+          </div>
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('cold')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">Cold weather</h2>
+            <img src="https://previews.123rf.com/images/tverdohlib/tverdohlib1912/tverdohlib191201466/135610497-outdoor-portrait-of-cute-baby-kid-in-cold-sunny-winter-weather-in-park-little-child-in-snow-field.jpg" alt="Cold" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Warm yourself up with comforting dishes for the cold weather.</p>
+          </div>
+          <div class="card shadow-lg rounded-lg p-8 bg-gray-700 hover:bg-gray-600" onclick="find('tv')">
+            <h2 class="text-xl font-semibold text-white mb-4 mx-auto text-center">I feel like watching TV</h2>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2017/03/article-2663147-18ea790800000578-756-634x635-1489488825.jpg" alt="TV" class="w-32 mx-auto mb-4">
+            <p class="text-gray-300">Enjoy delicious snacks while binge-watching your favorite shows.</p>
+          </div>
+        
+
+      </div>
+    </div>
+
+    <script>
+      function find(val) {
+        window.location.href="/find?mood="+val;
+      }
+    </script>
+  </body>
+</html>
